@@ -22,4 +22,22 @@ describe Undo::Serializer::Primitive do
       end
     end
   end
+
+  describe ".serialize?" do
+    it "is true for primitives" do
+      [true, nil, 1, 1.0, "hello", :hello].each do |primitive|
+        expect(subject.serialize? primitive).to be true
+      end
+    end
+
+    it "is true for empty array and hash" do
+      [[], {}].each do |primitive|
+        expect(subject.serialize? primitive).to be true
+      end
+    end
+
+    it "is false for objects" do
+      expect(subject.serialize? Object.new).to be false
+    end
+  end
 end
