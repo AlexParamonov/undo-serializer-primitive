@@ -37,7 +37,7 @@ module Undo
       end
 
       def deserialize?(hash)
-        name == (hash[:serializer] || hash["serializer"])
+        name == (hash[:serializer] || hash["serializer"]) rescue false
       end
 
       private

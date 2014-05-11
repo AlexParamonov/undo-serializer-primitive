@@ -40,4 +40,16 @@ describe Undo::Serializer::Primitive do
       expect(subject.serialize? Object.new).to be false
     end
   end
+
+  describe ".deserialize?" do
+    it "is true when was serialized by subject" do
+      data = subject.serialize "hello"
+      expect(subject.deserialize? data).to be true
+    end
+
+    it "is false otherwise" do
+      data = "hello".to_json
+      expect(subject.deserialize? data).to be false
+    end
+  end
 end
