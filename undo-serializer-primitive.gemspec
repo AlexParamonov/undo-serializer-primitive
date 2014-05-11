@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.version       = IO.read("VERSION")
   spec.authors       = ["Alexander Paramonov"]
   spec.email         = ["alexander.n.paramonov@gmail.com"]
-  spec.summary       = %q{Primitive serializer for Undo gem.}
-  spec.description   = %q{Primitive serializer for Undo gem.}
+  spec.summary       = %q{Serializer for primitives for Undo gem.}
+  spec.description   = %q{Serializer for primitives for Undo gem.}
   spec.homepage      = "http://github.com/AlexParamonov/undo-serializer-primitive"
   spec.license       = "MIT"
 
