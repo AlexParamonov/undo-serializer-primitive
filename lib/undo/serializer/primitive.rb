@@ -23,6 +23,7 @@ module Undo
                when "TrueClass"  then true
                when "FalseClass" then false
                when "NilClass"   then nil
+               when "Hash"       then Hash.new object # for Ruby < 2.0
                else Kernel.send primitive_class, object
                end
       end
